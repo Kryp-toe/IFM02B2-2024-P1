@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Database1" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Database1ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ACTOR" Member="ACTORs">
+    <Type Name="ACTOR">
+      <Column Name="ACT_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ACT_HAIRCOLOR" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ACT_EXP" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="A_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ARTIST_ACTOR" Member="ARTIST" ThisKey="A_ID" OtherKey="A_ID" Type="ARTIST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ARTIST" Member="ARTISTs">
+    <Type Name="ARTIST">
+      <Column Name="A_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="A_FIRSTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="A_LASTNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="T_NAME" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ARTIST_ACTOR" Member="ACTORs" ThisKey="A_ID" OtherKey="A_ID" Type="ACTOR" />
+      <Association Name="ARTIST_DANCER" Member="DANCERs" ThisKey="A_ID" OtherKey="A_ID" Type="DANCER" />
+      <Association Name="ARTIST_MUSICIAN" Member="MUSICIANs" ThisKey="A_ID" OtherKey="A_ID" Type="MUSICIAN" />
+      <Association Name="THEATER_ARTIST" Member="THEATER" ThisKey="T_NAME" OtherKey="T_NAME" Type="THEATER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DANCER" Member="DANCERs">
+    <Type Name="DANCER">
+      <Column Name="D_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="D_STYLE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="D_HEIGHT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="A_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ARTIST_DANCER" Member="ARTIST" ThisKey="A_ID" OtherKey="A_ID" Type="ARTIST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MUSICIAN" Member="MUSICIANs">
+    <Type Name="MUSICIAN">
+      <Column Name="M_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="M_INSTRUMENT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="M_GENRE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="A_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MUSICIAN_BRIDGE" Member="BRIDGEs" ThisKey="M_ID" OtherKey="M_ID" Type="BRIDGE" />
+      <Association Name="ARTIST_MUSICIAN" Member="ARTIST" ThisKey="A_ID" OtherKey="A_ID" Type="ARTIST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.THEATER" Member="THEATERs">
+    <Type Name="THEATER">
+      <Column Name="T_NAME" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="T_CITY" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="T_CAPICITY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="THEATER_ARTIST" Member="ARTISTs" ThisKey="T_NAME" OtherKey="T_NAME" Type="ARTIST" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ALBUM" Member="ALBUMs">
+    <Type Name="ALBUM">
+      <Column Name="ALB_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ALB_DATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="ALB_TITLE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ALB_NUMBTRACKS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ALB_PRICE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="ALBUM_BRIDGE" Member="BRIDGEs" ThisKey="ALB_ID" OtherKey="ALB_ID" Type="BRIDGE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BRIDGE" Member="BRIDGEs">
+    <Type Name="BRIDGE">
+      <Column Name="M_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ALB_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="ALBUM_BRIDGE" Member="ALBUM" ThisKey="ALB_ID" OtherKey="ALB_ID" Type="ALBUM" IsForeignKey="true" />
+      <Association Name="MUSICIAN_BRIDGE" Member="MUSICIAN" ThisKey="M_ID" OtherKey="M_ID" Type="MUSICIAN" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

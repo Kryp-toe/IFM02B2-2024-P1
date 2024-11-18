@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses1">
+  <DataContextMoniker Name="/DataClasses1DataContext" />
+  <nestedChildShapes>
+    <classShape Id="b636773a-2e77-4463-bb57-91f78cd2cee6" absoluteBounds="5.875, 2.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses1DataContext/ACTOR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a92c46b3-6c00-4dfa-a341-9c45fb59ed87" absoluteBounds="5.8900000000000006, 2.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b742bdfc-364a-4144-987d-993363c61140" absoluteBounds="3.5, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses1DataContext/ARTIST" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bb1d685e-3b5c-4c2f-85a6-78e272c067bd" absoluteBounds="3.5149999999999997, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 2.07859537760417); (5.875 : 2.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/ARTIST/ARTIST_ACTOR" />
+      <nodes>
+        <classShapeMoniker Id="b742bdfc-364a-4144-987d-993363c61140" />
+        <classShapeMoniker Id="b636773a-2e77-4463-bb57-91f78cd2cee6" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9e1a8c65-41d3-4648-a17e-d7a3e28ae40e" absoluteBounds="1.125, 2.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses1DataContext/DANCER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e601eb45-919b-4540-be92-d0e5a2cab0ee" absoluteBounds="1.1400000000000001, 2.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.5 : 2.07859537760417); (3.125 : 2.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataClasses1DataContext/ARTIST/ARTIST_DANCER" />
+      <nodes>
+        <classShapeMoniker Id="b742bdfc-364a-4144-987d-993363c61140" />
+        <classShapeMoniker Id="9e1a8c65-41d3-4648-a17e-d7a3e28ae40e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="57d8131a-b5b6-47e1-88d9-0f372b121c44" absoluteBounds="3.5, 2.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataClasses1DataContext/MUSICIAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a7836274-0e3a-455c-8c88-3ed0453cbbe5" absoluteBounds="3.5149999999999997, 2.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5 : 2.07859537760417); (4.5 : 2.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/ARTIST/ARTIST_MUSICIAN" />
+      <nodes>
+        <classShapeMoniker Id="b742bdfc-364a-4144-987d-993363c61140" />
+        <classShapeMoniker Id="57d8131a-b5b6-47e1-88d9-0f372b121c44" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a80925cb-c77d-4fa6-bd90-0518d5769010" absoluteBounds="0.5, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataClasses1DataContext/THEATER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="926047d3-c4c1-428a-af70-a5ef99987b18" absoluteBounds="0.51500000000000057, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 1.19314697265625); (3.5 : 1.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/THEATER/THEATER_ARTIST" />
+      <nodes>
+        <classShapeMoniker Id="a80925cb-c77d-4fa6-bd90-0518d5769010" />
+        <classShapeMoniker Id="b742bdfc-364a-4144-987d-993363c61140" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="a61f6ec8-9d9a-4467-9558-e7c7a9652e5a" absoluteBounds="3.5, 5.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataClasses1DataContext/ALBUM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b49581d8-c3e0-4a12-b1f0-8d897ce648c1" absoluteBounds="3.5149999999999997, 6.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c08c0700-0399-46f1-88f9-f534c4ccdddf" absoluteBounds="3.5, 4.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DataClasses1DataContext/BRIDGE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e18f5600-8f01-4c04-96a9-855a58b9470d" absoluteBounds="3.5149999999999997, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5 : 5.75); (4.5 : 5.44399251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/ALBUM/ALBUM_BRIDGE" />
+      <nodes>
+        <classShapeMoniker Id="a61f6ec8-9d9a-4467-9558-e7c7a9652e5a" />
+        <classShapeMoniker Id="c08c0700-0399-46f1-88f9-f534c4ccdddf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 3.95359537760417); (4.5 : 4.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/MUSICIAN/MUSICIAN_BRIDGE" />
+      <nodes>
+        <classShapeMoniker Id="57d8131a-b5b6-47e1-88d9-0f372b121c44" />
+        <classShapeMoniker Id="c08c0700-0399-46f1-88f9-f534c4ccdddf" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
